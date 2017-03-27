@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>REST with Forms</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="pragma" content="no-cache">  
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="cache-control" content="no-store">  
+		<meta http-equiv="expires" content="0">  
+        <link rel="stylesheet" type="text/css" media="all" href="lib/css/font-awesome.css"> 
+        <link rel="stylesheet" type="text/css" media="all" href="lib/css/stx-pattern-library.css">
+        <script src="lib/js/jquery.js"></script>
+        <script src="lib/js/stx-pattern-library.js"></script>
+		<script src="lib/js/main.js"></script>
+    </head>
+    <body>
+     	<div class="container">
+     	<h3>Demo</h3>
+     	</div>
+        <div class="container">
+        	<p>
+        		<button id="btnRefresh">Refresh</button>
+        		<button id="btnRun">Run</button>
+        		<button id="btnRemove">Remove</button>
+        	</p>
+        	<div id="tablecontainer">
+        		<div class="tables-and-grids ">
+        			<div class="tg-selectable-rows">
+        				<div class="table-responsive">
+				        	<table class="table">
+					        	<thead>
+					        		<tr>
+					        			<th>
+											<div class="checkbox selectState">
+												<input type="checkbox" id="checkboxCustom-00" class="checkbox-custom">
+												<label for="checkboxCustom-00">
+													<span class="all"><i class="fa fa-check"></i></span>
+													<span class="any"><i class="fa fa-minus one"></i></span>
+												</label>
+											</div>
+											</th>
+										<th>ID</th>
+										<th>Name</th>
+										<th>Description</th>
+										<th></th>
+					        	</tr>
+					        	</thead>
+					        	<tbody>
+					        	</tbody>
+				        	</table>
+			        	</div>
+		        	</div>
+	        	</div>
+        	</div>
+	        <div class="form-group"">
+	            <label for="username">ID</label>
+	            <input type="text" name="testID" id="testID" class="form-control"/>
+	        </div>
+	        <div class="form-group"">
+	            <label for="username">Name</label>
+	            <input type="text" name="testName" id="testName" class="form-control"/>
+	        </div>
+	        <div class="form-group"">
+	            <label for="testDes">Description</label>
+	            <input type="text" name="testDes" id="testDes" class="form-control"/>
+	        </div>
+	        <button id="btnAdd">Add</button>
+	        <button id="btnUpdate">Update</button>
+        </div>
+    </body>
+</html>

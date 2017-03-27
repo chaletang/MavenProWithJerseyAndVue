@@ -1,0 +1,12 @@
+#btnAdd {
+	display: inline-block;
+}
+#btnUpdate {
+	display: none;
+}
+.inEdit #btnAdd {
+	display: none;
+}
+.inEdit #btnUpdate {
+	display: inline-block;
+}
