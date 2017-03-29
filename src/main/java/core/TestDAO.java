@@ -137,8 +137,7 @@ public class TestDAO {
             Document filter = new Document();  
             filter.append("testId", test.getTestId());
             Document update = new Document();  
-            update.append("$set", new Document("testName", test.getTestName())); 
-            update.append("$set", new Document("testDes", test.getTestDes())); 
+            update.append("$set", new Document("testName", test.getTestName()).append("testDes", test.getTestDes())); 
             c.updateOne(filter, update);
         } catch (Exception e) {
             e.printStackTrace();

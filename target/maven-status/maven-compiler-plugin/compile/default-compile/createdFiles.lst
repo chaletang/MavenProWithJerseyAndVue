@@ -1,0 +1,7 @@
+rest\TestService.class
+core\TestDAO.class
+core\Format.class
+core\TestCmd.class
+core\MongoDB.class
+rest\TestClient.class
+core\Cmd.class

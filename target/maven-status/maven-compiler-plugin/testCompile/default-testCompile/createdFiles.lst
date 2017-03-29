@@ -1,0 +1,5 @@
+testng\Table.class
+testng\TestTable.class
+testng\Browser.class
+testng\TestChrome.class
+testng\TestFirefox.class

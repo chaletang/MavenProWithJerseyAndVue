@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+  <test name="Test">
+    <classes>
+      <class name="testng.TestTable">
+      	<methods preserve-order="true">               
+			<include name="openUrl" />              
+			<include name="findTable" />
+			<include name="printTableRowCount" />  
+			<include name="printTableCellData" />
+			<include name="printTableCellSum" />          
+		</methods> 
+      </class>
+    </classes>
+  </test>
+</suite>

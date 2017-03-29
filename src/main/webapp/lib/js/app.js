@@ -107,9 +107,9 @@ var app = new Vue({
 			var self = this;
 			var name = self.testName && self.testName.trim();
 			var des = self.testDes && self.testDes.trim();
-			if (!name) {
-				return;
-			}
+			//if (!name) {
+			//	return;
+			//}
 			var	editId = id,
 				editName = name,
 				editDes = des;

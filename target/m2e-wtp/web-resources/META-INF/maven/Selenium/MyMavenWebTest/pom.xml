@@ -132,7 +132,7 @@
   			<configuration>
 				<suiteXmlFiles>
 				<!-- TestNG suite XML files -->
-					<suiteXmlFile>src/test/resources/TestNG-bat.xml</suiteXmlFile>
+					<suiteXmlFile>src/test/resources/TestTable.xml</suiteXmlFile>
 				</suiteXmlFiles>
 			</configuration>
   		</plugin>
