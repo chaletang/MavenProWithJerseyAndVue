@@ -19,8 +19,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.CacheControl;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.UriBuilder;  
+import javax.ws.rs.core.UriBuilder;
+import javax.ws.rs.core.UriInfo;
 
 import org.glassfish.grizzly.http.server.HttpServer;  
   
@@ -30,12 +32,19 @@ import com.sun.jersey.api.core.ResourceConfig;
 import com.sun.jersey.api.json.JSONConfiguration;
 
 import core.Cmd;
-import core.TestCmd;
-import core.TestDAO; 
+import core.ReportDAO1;
+import core.ReportDAO;
+import core.TestDAO;
+import model.TRMethod;
+import model.TestCmd;
+import model.TestReport; 
 
 @Path("/test")
 public class TestService {
 	private static Map<String,TestCmd> testMap = new HashMap<String,TestCmd>();
+	
+	@Context
+    UriInfo uriInfo;
 	
 	@GET  
     @Produces(MediaType.APPLICATION_JSON)  
@@ -140,5 +149,22 @@ public class TestService {
 		}
 		
 	}
+	
+	@GET
+	@Path("/report") 
+	@Consumes({MediaType.APPLICATION_FORM_URLENCODED})
+	@Produces(MediaType.TEXT_HTML)  
+	public Response report() {
+		URI targetURIForRedirection = uriInfo.getBaseUriBuilder().path("../report.html").build();
+	    return Response.temporaryRedirect(targetURIForRedirection).build();
+	} 
+	
+	@GET  
+    @Path("/reportData")  
+    @Produces(MediaType.APPLICATION_JSON)  
+	public TestReport getReportXML() {  
+		System.out.println("Get Test Report");
+		return ReportDAO.getReportResult();
+    } 
 
 }

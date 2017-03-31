@@ -1,77 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
+    <line>
+      <![CDATA[expected row count is10, actual row count is:10]]>
+    </line>
+    <line>
+      <![CDATA[table[2,2]——————>name3]]>
+    </line>
+    <line>
+      <![CDATA[Cell(1)Sum——————>55]]>
+    </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="16883" started-at="2017-03-28T07:12:21Z" finished-at="2017-03-28T07:12:37Z">
+  <suite name="Suite" duration-ms="17855" started-at="2017-03-31T07:15:29Z" finished-at="2017-03-31T07:15:47Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="16883" started-at="2017-03-28T07:12:21Z" finished-at="2017-03-28T07:12:37Z">
+    <test name="Test" duration-ms="17855" started-at="2017-03-31T07:15:29Z" finished-at="2017-03-31T07:15:47Z">
       <class name="testng.TestTable">
-        <test-method status="PASS" signature="openChrome()[pri:0, instance:testng.TestTable@6615435c]" name="openChrome" is-config="true" duration-ms="1883" started-at="2017-03-28T15:12:21Z" finished-at="2017-03-28T15:12:23Z">
+        <test-method status="PASS" signature="openChrome()[pri:0, instance:testng.TestTable@3a03464]" name="openChrome" is-config="true" duration-ms="2276" started-at="2017-03-31T15:15:29Z" finished-at="2017-03-31T15:15:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openChrome -->
-        <test-method status="PASS" signature="openUrl()[pri:0, instance:testng.TestTable@6615435c]" name="openUrl" duration-ms="5613" started-at="2017-03-28T15:12:23Z" finished-at="2017-03-28T15:12:28Z">
+        <test-method status="PASS" signature="openUrl()[pri:0, instance:testng.TestTable@3a03464]" name="openUrl" duration-ms="5990" started-at="2017-03-31T15:15:31Z" finished-at="2017-03-31T15:15:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUrl -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testng.TestTable@6615435c]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-03-28T15:12:23Z" finished-at="2017-03-28T15:12:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testng.TestTable@6615435c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-03-28T15:12:28Z" finished-at="2017-03-28T15:12:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="findTable()[pri:0, instance:testng.TestTable@6615435c]" name="findTable" duration-ms="2057" started-at="2017-03-28T15:12:28Z" finished-at="2017-03-28T15:12:30Z">
+        <test-method status="PASS" signature="findTable()[pri:0, instance:testng.TestTable@3a03464]" name="findTable" duration-ms="2028" started-at="2017-03-31T15:15:37Z" finished-at="2017-03-31T15:15:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- findTable -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testng.TestTable@6615435c]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-03-28T15:12:28Z" finished-at="2017-03-28T15:12:28Z">
+        <test-method status="PASS" signature="printTableRowCount()[pri:0, instance:testng.TestTable@3a03464]" name="printTableRowCount" duration-ms="2067" started-at="2017-03-31T15:15:39Z" finished-at="2017-03-31T15:15:41Z">
           <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testng.TestTable@6615435c]" name="afterMethod" is-config="true" duration-ms="1" started-at="2017-03-28T15:12:30Z" finished-at="2017-03-28T15:12:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testng.TestTable@6615435c]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2017-03-28T15:12:30Z" finished-at="2017-03-28T15:12:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="printTableRowCount()[pri:0, instance:testng.TestTable@6615435c]" name="printTableRowCount" duration-ms="2084" started-at="2017-03-28T15:12:30Z" finished-at="2017-03-28T15:12:32Z">
-          <reporter-output>
+            <line>
+              <![CDATA[expected row count is10, actual row count is:10]]>
+            </line>
           </reporter-output>
         </test-method> <!-- printTableRowCount -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testng.TestTable@6615435c]" name="afterMethod" is-config="true" duration-ms="1" started-at="2017-03-28T15:12:32Z" finished-at="2017-03-28T15:12:32Z">
+        <test-method status="PASS" signature="printTableCellData()[pri:0, instance:testng.TestTable@3a03464]" name="printTableCellData" duration-ms="2056" started-at="2017-03-31T15:15:41Z" finished-at="2017-03-31T15:15:43Z">
           <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testng.TestTable@6615435c]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-03-28T15:12:32Z" finished-at="2017-03-28T15:12:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="printTableCellData()[pri:0, instance:testng.TestTable@6615435c]" name="printTableCellData" duration-ms="2108" started-at="2017-03-28T15:12:32Z" finished-at="2017-03-28T15:12:34Z">
-          <reporter-output>
+            <line>
+              <![CDATA[table[2,2]——————>name3]]>
+            </line>
           </reporter-output>
         </test-method> <!-- printTableCellData -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testng.TestTable@6615435c]" name="beforeMethod" is-config="true" duration-ms="2" started-at="2017-03-28T15:12:34Z" finished-at="2017-03-28T15:12:34Z">
+        <test-method status="PASS" signature="printTableCellSum()[pri:0, instance:testng.TestTable@3a03464]" name="printTableCellSum" duration-ms="2584" started-at="2017-03-31T15:15:43Z" finished-at="2017-03-31T15:15:46Z">
           <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testng.TestTable@6615435c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-03-28T15:12:34Z" finished-at="2017-03-28T15:12:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="printTableCellSum()[pri:0, instance:testng.TestTable@6615435c]" name="printTableCellSum" duration-ms="2228" started-at="2017-03-28T15:12:34Z" finished-at="2017-03-28T15:12:37Z">
-          <reporter-output>
+            <line>
+              <![CDATA[Cell(1)Sum——————>55]]>
+            </line>
           </reporter-output>
         </test-method> <!-- printTableCellSum -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testng.TestTable@6615435c]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-03-28T15:12:37Z" finished-at="2017-03-28T15:12:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="closeChrome()[pri:0, instance:testng.TestTable@6615435c]" name="closeChrome" is-config="true" duration-ms="871" started-at="2017-03-28T15:12:37Z" finished-at="2017-03-28T15:12:37Z">
+        <test-method status="PASS" signature="closeChrome()[pri:0, instance:testng.TestTable@3a03464]" name="closeChrome" is-config="true" duration-ms="835" started-at="2017-03-31T15:15:46Z" finished-at="2017-03-31T15:15:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeChrome -->

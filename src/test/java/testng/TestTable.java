@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 
 public class TestTable {
@@ -49,10 +50,12 @@ public class TestTable {
 	//------------------------------Print Table Row Count------------------------------//
 	public void printTableRowCount() throws InterruptedException {
 		System.out.println("*******************");
-		int expectedData = 4;
+		int expectedData = 10;
 		int actualData = table.getRowCount();
-		System.out.println("expected row count is 4, actual row count is:" + actualData);
-		Assert.assertEquals(expectedData,actualData);
+		String message = "expected row count is" + expectedData + ", actual row count is:" + actualData;
+		System.out.println(message);
+		Assert.assertEquals(actualData,expectedData);
+		Reporter.log( message, true );
 		Thread.sleep(2000);
 	}
 	
@@ -64,7 +67,9 @@ public class TestTable {
 		int cellNum = 2;	
 		WebElement cell = table.getCell(rowNum, cellNum);
 		String cellData = table.getCellData(cell);
-		System.out.println("table[" + rowNum + "," + cellNum + "]——————>" + cellData);
+		String message = "table[" + rowNum + "," + cellNum + "]——————>" + cellData;
+		System.out.println(message);
+		Reporter.log( message, true );
 		Thread.sleep(2000);
 	}
 	
@@ -81,16 +86,10 @@ public class TestTable {
 			System.out.println("[" + rowNum + "," + cellNum + "]——————>" + cellData);	
 			sum = sum + cellData;
 		}
-		System.out.println("Cell(" + cellNum + ")Sum——————>" + sum);
+		String message = "Cell(" + cellNum + ")Sum——————>" + sum;
+		System.out.println(message);
+		Reporter.log( message, true );
 		Thread.sleep(2000);
-	}
-	
-	@BeforeMethod
-	public void beforeMethod() {
-	}
-
-	@AfterMethod
-	public void afterMethod() {
 	}
 
 	@AfterClass

@@ -1,7 +1,15 @@
 C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\core\MongoDB.java
 C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\rest\TestService.java
-C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\rest\TestClient.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\model\TRSummary.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\model\TRSuite.java
 C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\core\Format.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\model\TestCmd.java
 C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\core\TestDAO.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\model\TRTest.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\core\ReportDAO1.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\model\TRMethod.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\rest\TestClient.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\model\TRClass.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\core\ReportDAO.java
 C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\core\Cmd.java
-C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\core\TestCmd.java
+C:\Lily\TestPro\workspace\MyMavenWebTest\src\main\java\model\TestReport.java

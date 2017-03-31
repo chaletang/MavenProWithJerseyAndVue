@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html data-framework="vue">
+    <head>
+        <title>REST with Forms</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="pragma" content="no-cache">  
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="cache-control" content="no-store">  
+		<meta http-equiv="expires" content="0">  
+        <link rel="stylesheet" type="text/css" media="all" href="lib/css/font-awesome.css"> 
+        <link rel="stylesheet" type="text/css" media="all" href="lib/css/stx-pattern-library.css">
+        <link rel="stylesheet" type="text/css" media="all" href="lib/css/app.css">
+    </head>
+    <body>
+     	<div class="container">
+     	<h3>Demo</h3>
+     	</div>
+     	<div id="reportApp" class="reportApp">
+	        <div class="container">
+	        	<p>
+	        		<a id="btnBack" href="/MyMavenWebTest">Back</a>
+	        	</p>
+	        	<div id="tablecontainer">
+	        		<div class="table-responsive">
+       					<table class="table">
+       						<thead>
+				        		<tr>
+									<th>skipped</th>
+									<th>failed</th>
+									<th>ignored</th>
+									<th>total</th>
+									<th>passed</th>
+				        		</tr>
+				        	</thead>
+				        	<tbody>
+				        		<tr>
+									<td>{{summary.skipped}}</th>
+									<td>{{summary.failed}}</th>
+									<td>{{summary.ignored}}</th>
+									<td>{{summary.total}}</th>
+									<td>{{summary.passed}}</th>
+				        		</tr>
+				        	</tbody>
+       					</table>
+       					</div>
+       				<div class="table-responsive">
+			        	<table class="table" id="table">
+				        	<thead>
+				        		<tr>
+									<th>Name</th>
+									<th>Duration(ms)</th>
+									<th>Started</th>
+									<th>Finished</th>
+									<th>Status</th>
+									<th>Message</th>
+				        	</tr>
+				        	</thead>
+				        	<tbody>
+				        		<tr v-for="method in methods" :class={green:method.methodStatus=="PASS",red:method.methodStatus=="FAIL"}>
+									<td>{{method.methodName}}</td>
+									<td>{{method.methodDuration}}</td>
+									<td>{{method.methodStarted}}</td>
+									<td>{{method.methodFinished}}</td>
+									<td class="status">{{method.methodStatus}}</td>
+									<td>{{method.methodMessage}}</td>
+				        		</tr>
+				        	</tbody>
+			        	</table>
+		        	</div>
+	        	</div>
+	        </div>
+        </div>
+        <script src="lib/js/jquery.js"></script>
+        <!-- $ npm install jquery-xml2json -->
+        <script src="lib/js/xml2json.js"></script>
+        <script src="lib/js/jquery.js"></script>
+        <!-- <script src="lib/js/stx-pattern-library.js"></script>
+		<script src="lib/js/main.js"></script> -->	
+        <script src="lib/js/vue.min.js"></script>
+        <!-- $ npm install vue-resource | $ bower install vue-resource -->
+		<script src="https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js"></script>
+        <script src="lib/js/report.js"></script>
+    </body>
+</html>

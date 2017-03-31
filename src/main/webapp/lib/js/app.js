@@ -206,6 +206,22 @@ var app = new Vue({
 					alert('Test error: ' + textStatus);
 				}
 			});
+		},
+		report: function(){ 
+			var self = this;
+			$.ajax({
+				type: 'GET',
+				//contentType: 'application/json;charset=UTF-8',
+				url: config.rootURL + "/report",
+				dataType: "html",
+				success: function(data, textStatus, jqXHR){
+					alert('Redirect To Report Page');
+					location.href = "./report.html";
+				},
+				error: function(jqXHR, textStatus, errorThrown){
+					alert('Test error: ' + textStatus);
+				}
+			});
 		}
 	}
 });

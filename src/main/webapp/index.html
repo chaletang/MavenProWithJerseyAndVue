@@ -21,7 +21,7 @@
 	        		<button id="btnRefresh" @click="get">Refresh</button>
 	        		<button id="btnCreate" @click="create">New</button> 
 	        		<button id="btnRemove" @click="remove(checkedTests)">Remove</button>
-	        		<button id="btnRun" class="pull-right" @click="run(checkedTests)">Run</button>
+	        		<button id="btnReport" class="pull-right" @click="report">Report</button>
 	        	</p>
 	        	<div id="tablecontainer">
 	        		<div class="tables-and-grids ">
@@ -66,6 +66,7 @@
 				        	</div>
 			        	</div>
 		        	</div>
+	        		<button id="btnRun" class="pull-right" @click="run(checkedTests)">Run</button>
 	        	</div>
 	        	<p>You select: {{checkedTests}}</p>
 	        	<div class="editorContainer" v-if="seen" :class={inEdit:editing}>

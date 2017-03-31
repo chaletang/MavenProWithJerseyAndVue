@@ -5,11 +5,13 @@
     <classes>
       <class name="testng.TestTable">
         <methods>
+          <include name="printTableCellData"/>
           <include name="openChrome"/>
-          <include name="beforeMethod"/>
+          <include name="openUrl"/>
           <include name="closeChrome"/>
           <include name="printTableCellSum"/>
-          <include name="afterMethod"/>
+          <include name="printTableRowCount"/>
+          <include name="findTable"/>
         </methods>
       </class> <!-- testng.TestTable -->
     </classes>
