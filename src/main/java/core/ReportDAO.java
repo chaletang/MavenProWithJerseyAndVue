@@ -2,8 +2,10 @@ package core;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.dom4j.*;   
 import org.dom4j.io.*;
@@ -22,8 +24,10 @@ public class ReportDAO {
 	public static Document readDoc(){
 		try {           
         	File f = new File("C:/Lily/TestPro/workspace/MyMavenWebTest/target/surefire-reports/testng-results.xml");   
-        	SAXReader reader = new SAXReader();   
-        	doc = reader.read(f);
+        	SAXReader reader = new SAXReader();  
+        	if(f.exists()){
+        		doc = reader.read(f);
+        	}
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
@@ -42,6 +46,7 @@ public class ReportDAO {
 		summary.setPassed(root.attributeValue("passed" ));
 		return summary;
 	}
+	
 	
 	public static TRSuite getReportSuite(Element foo) {
 		TRSuite suite = new TRSuite();
@@ -75,7 +80,6 @@ public class ReportDAO {
 		String name = foo.attributeValue("name" );
 		String status = foo.attributeValue("status" );
 		String isConfig = foo.attributeValue("is-config");
-		String message = "";
 		if(isConfig == null){
 			if(!"beforeMethod".equals(name)&& !"afterMethod".equals(name)){
 				method.setMethodName(foo.attributeValue("name" ));
@@ -84,12 +88,16 @@ public class ReportDAO {
 				method.setMethodFinished(foo.attributeValue("finished-at" ));
 				method.setMethodStatus(status);
 				if(!"PASS".equals(status)){
-					message = foo.selectSingleNode("//exception/message").getText();
+					Node output = foo.selectSingleNode("//exception/message");
+					String message = output == null? "": output.getText();
+					method.setMethodMessage(message);
 				}
 				else {
-					message = foo.selectSingleNode("//reporter-output/line").getText();
+					Node output = foo.selectSingleNode("//reporter-output/line");
+					String message = output == null? "": output.getText();
+					method.setMethodMessage(message);
 				}
-				method.setMethodMessage(message);
+				
 			}
 		}
 		
@@ -153,7 +161,11 @@ public class ReportDAO {
 			List<Node> nodes = doc.selectNodes( "/" + ele.getPath() + "[@name='" + ele.attributeValue("name") + "']/test-method" );
 			for (Iterator<Node> i = nodes.iterator(); i.hasNext(); ) {
 				Element foo = (Element) i.next();
-				list.add(getReportMethod(foo));
+				TRMethod method = getReportMethod(foo);
+				if(method.getMethodName()!= null) {
+					list.add(method);
+				}
+				
 	        }
         } catch (Exception e) {
             e.printStackTrace();

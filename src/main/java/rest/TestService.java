@@ -32,7 +32,6 @@ import com.sun.jersey.api.core.ResourceConfig;
 import com.sun.jersey.api.json.JSONConfiguration;
 
 import core.Cmd;
-import core.ReportDAO1;
 import core.ReportDAO;
 import core.TestDAO;
 import model.TRMethod;
@@ -102,29 +101,19 @@ public class TestService {
 		System.out.println("updateTest");
 		return TestDAO.save(test);
 	} 
-	
-	@GET
-	@Path("/run/{id}") 
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)  
-	public void runTest(@PathParam("id") String id) {
-		TestCmd test = TestDAO.findById(id);
-		System.out.println("Run Test:" + test.getTestId());
-		//Cmd.execCommand(test.getTestCmd());
-		Cmd.execBat(test.getTestName());
-	} 
-	
+		
 	@GET
 	@Path("/run") 
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)  
 	public void runTests(@QueryParam("id") List<String> id) {
+		List<String> testArray = new ArrayList<String>();
 		for(String i:id) {
 			TestCmd test = TestDAO.findById(i);
 			System.out.println("Run Test:" + test.getTestId());
-			//Cmd.execCommand(test.getTestCmd());
-			Cmd.execBat(test.getTestName());
+			testArray.add(test.getTestName());	
 		}
+		Cmd.execTest(testArray);
 	} 
 	
 	@DELETE
@@ -150,14 +139,15 @@ public class TestService {
 		
 	}
 	
-	@GET
+	/*@GET
 	@Path("/report") 
 	@Consumes({MediaType.APPLICATION_FORM_URLENCODED})
 	@Produces(MediaType.TEXT_HTML)  
 	public Response report() {
+		//Redirect to other url
 		URI targetURIForRedirection = uriInfo.getBaseUriBuilder().path("../report.html").build();
 	    return Response.temporaryRedirect(targetURIForRedirection).build();
-	} 
+	} */
 	
 	@GET  
     @Path("/reportData")  

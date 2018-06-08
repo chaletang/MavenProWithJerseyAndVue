@@ -33,14 +33,14 @@ public class Table {
 		return this.rows.size();
 	}
 	
-	public void getCells(){
+	public void getCells(int rowNum){
 		getRows();
-		WebElement specificRow = this.rows.get(0); 
+		WebElement specificRow = this.rows.get(rowNum); 
 		this.cells = specificRow.findElements(By.tagName("td"));
 	}
 	
-	public int getCellCount(){
-		getCells();
+	public int getCellCount(int rowNum){
+		getCells(rowNum);
 		return this.cells.size();
 	}
 	

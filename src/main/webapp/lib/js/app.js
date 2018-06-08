@@ -15,20 +15,31 @@ var app = new Vue({
 		tests: [],
 		checkedTests: [],
 		editing: false,
-		checked: false,
+		checkedAll: false,
 		seen: false,
 		testIndex: 0,
+		testPrefix: 't-',
 		testName: '',
 		testDes: ''
 	},
-	watch: {
-		
+	watch:{
+		'checkedTests':function(){
+			if(this.tests.length === this.checkedTests.length){
+				this.checkedAll = true;
+			}else{
+				this.checkedAll = false;
+			}
+		}
 	},
 	computed: {
-		currentTestId: function (){
-			return this.editing? this.testIndex.toString():(this.testIndex + 1).toString();
+		currentTestId: function() {
+			var self = this;
+			return self.testPrefix + self.testIndex.toString();
+	    },
+	    maxTestId: function() {
+			var self = this;
+			return self.tests.length == 0? 1 : Number(self.tests[self.tests.length-1].testId.replace(self.testPrefix, '')) + 1;
 	    }
-	
 	},
 	filters: {
 		
@@ -37,6 +48,17 @@ var app = new Vue({
 		this.get();
 	},
 	methods: {
+		checkAll: function() {
+			var self = this;
+			var checkedTests = [];
+			if (self.checkedAll) {
+				self.tests.forEach(function (test) {
+					checkedTests.push(test.testId);
+				});
+			}	
+			self.checkedTests = checkedTests;
+		},
+		
 		get: function(){
 			var self = this;
 			$.ajax({
@@ -46,9 +68,10 @@ var app = new Vue({
 				success: function(data, textStatus, jqXHR){
 					//alert('Test get successfully! ');
 					self.tests = data;
-					self.testIndex = data.length;
+					self.testIndex = self.maxTestId;
 					self.seen = false;
 					self.editing = false;
+					
 				},
 				error: function(jqXHR, textStatus, errorThrown){
 					alert('Test error: ' + textStatus);
@@ -59,7 +82,7 @@ var app = new Vue({
 			var self = this;
 			self.showEditor();
 			self.reset();
-			self.testIndex = self.tests.length;
+			self.testIndex = self.maxTestId;
 			self.editing = false;
 		},
 		add: function(){
@@ -69,7 +92,7 @@ var app = new Vue({
 			if (!name) {
 				return;
 			}
-			var	newId = ++self.testIndex,
+			var	newId = self.currentTestId,
 				newName = name,
 				newDes = des;
 
@@ -98,7 +121,7 @@ var app = new Vue({
 		edit: function(test){
 			var self = this;
 			self.showEditor();
-			self.testIndex = Number(test.testId);
+			self.testIndex = Number(test.testId.replace(self.testPrefix, ''));
 			self.testName = test.testName;
 			self.testDes =  test.testDes;
 			self.editing = true;
@@ -166,23 +189,6 @@ var app = new Vue({
 				success: function(data, textStatus, jqXHR){
 					//alert('Remove successfully');
 					self.get();
-				},
-				error: function(jqXHR, textStatus, errorThrown){
-					alert('Test error: ' + textStatus);
-				}
-			});
-		},
-		runOne: function(id){
-			var self = this;
-			var currentID = Number(id);
-			$.ajax({
-				type: 'GET',
-				contentType: 'application/json;charset=UTF-8',
-				url: config.rootURL + "/run/" + currentID,
-				dataType: "json",
-				data: currentID,
-				success: function(data, textStatus, jqXHR){
-					//alert('Run successfully');
 				},
 				error: function(jqXHR, textStatus, errorThrown){
 					alert('Test error: ' + textStatus);

@@ -36,8 +36,23 @@ public class MongoDB {
 	  		System.err.println( e.getClass().getName() + ": " + e.getMessage() );
 	  			return null;
 	      	}
-	   	}
-   public static void close() {	
+   	}
+	public static MongoCollection<Document> getConnection2() {	
+		try{		
+		     // Connect to mongodb server
+			 mongoClient = new MongoClient( "localhost" , 27017 );			
+			 // Connect to your databases
+			 db = mongoClient.getDatabase("mydb");
+			 System.out.println("Connect to database successfully");
+			 collection = db.getCollection("testcmd2");
+		     return collection;
+				
+	  	}catch(Exception e){
+	  		System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	  			return null;
+	      	}
+   	}
+	public static void close() {	
 	   mongoClient.close();
-   }
+	}
 }

@@ -1,5 +1,8 @@
 package model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -7,7 +10,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "trSummary")
 public class TRSummary {
-	
 	private String Skipped;  
 	private String Failed;  
 	private String Ignored;  

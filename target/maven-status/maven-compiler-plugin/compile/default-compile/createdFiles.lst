@@ -3,6 +3,8 @@ core\TestDAO.class
 model\TRMethod.class
 core\Format.class
 model\TestReport.class
+model\TestCmd2.class
+core\TestDAO2.class
 rest\TestClient.class
 model\TRClass.class
 core\Cmd.class
@@ -11,5 +13,5 @@ rest\TestService.class
 core\MongoDB.class
 model\TRTest.class
 model\TRSuite.class
-core\ReportDAO1.class
 model\TRSummary.class
+rest\TestService2.class

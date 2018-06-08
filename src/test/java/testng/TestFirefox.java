@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver; 
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 
 public class TestFirefox {
@@ -42,7 +43,8 @@ public class TestFirefox {
 		String strPageTitle = driver.getTitle();
 		System.out.println(strPageTitle);
 		//validate result
-		Assert.assertEquals(strPageTitle, "maven in ff_百度搜索");
+		Assert.assertEquals(strPageTitle, "maven in ff_");
+		Reporter.log( strPageTitle, true );
 	}
 	
 	@Test
@@ -53,14 +55,7 @@ public class TestFirefox {
 		String strPageTitle = driver.getTitle();
 		System.out.println("Page title: - "+strPageTitle);
 		Assert.assertTrue(strPageTitle.equalsIgnoreCase("Google"), "Page title doesn't match");
-	}
-	
-	@BeforeMethod
-	public void beforeMethod() {
-	}
-
-	@AfterMethod
-	public void afterMethod() {
+		Reporter.log( strPageTitle, true );
 	}
 
 	@AfterClass

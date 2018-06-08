@@ -6,7 +6,7 @@ var app = new Vue({
 	el: '#reportApp',
 	data: {
 		summary: {},
-		methods: []
+		suites: []
 	},
 	watch: {
 		
@@ -30,7 +30,8 @@ var app = new Vue({
 				success: function(data, textStatus, jqXHR){
 					//alert('Test get successfully! ');
 					self.summary = data.summary;
-					self.methods = data.suites[0].tests[0].tclasses[0].tmethods;
+					
+					self.suites = data.suites;
 				},
 				error: function(jqXHR, textStatus, errorThrown){
 					alert('Test error: ' + textStatus);

@@ -1,8 +1,10 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/webapp/app/components/v-chart.vue=UTF-8
 encoding//src/test/java=UTF-8
 encoding//src/test/java/testng/TestChrome.java=UTF-8
 encoding//src/test/java/testng/TestFirefox.java=UTF-8
+encoding//src/test/java/testng/TestIE.java=UTF-8
 encoding//src/test/resources=UTF-8
 encoding/<project>=UTF-8

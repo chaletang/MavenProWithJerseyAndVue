@@ -1,6 +1,10 @@
-testng\Table.class
 testng\TestTable.class
+testng\TestBase.class
 testng\Browser.class
 testng\TestChrome.class
+testng\Table.class
+testng\TestSearch2.class
+testng\TestIE.class
 testng\CustomReporter.class
 testng\TestFirefox.class
+testng\TestSearch.class

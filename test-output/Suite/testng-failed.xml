@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
-  <test name="Test(failed)">
+  <test name="TestBrowser(failed)">
     <classes>
-      <class name="testng.TestTable">
+      <class name="testng.TestChrome">
         <methods>
-          <include name="printTableCellData"/>
+          <include name="testng2"/>
           <include name="openChrome"/>
-          <include name="openUrl"/>
+          <include name="testng1"/>
           <include name="closeChrome"/>
-          <include name="printTableCellSum"/>
-          <include name="printTableRowCount"/>
-          <include name="findTable"/>
         </methods>
-      </class> <!-- testng.TestTable -->
+      </class> <!-- testng.TestChrome -->
+      <class name="testng.TestFirefox">
+        <methods>
+          <include name="closeFirefox"/>
+          <include name="testng1"/>
+          <include name="openFirefox"/>
+        </methods>
+      </class> <!-- testng.TestFirefox -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- TestBrowser(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+  <test name="Test">
+  	<parameter name="pRfqId" value="Q-000014"/>
+	<parameter name="pStatus" value="Draft"/>
+	<parameter name="pUserName" value="RACKABLE"/>
+    <classes>
+      <class name="testng.TestSearch">
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
